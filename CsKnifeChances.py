@@ -9,36 +9,53 @@ red = 0
 
 caseCost = float(input("Cost Of Case: "))
 
-def knifeOpened():
-    print("Knife Opened")
-    print("Tries", tries)
+statTrack = 0
 while True:
     skinChance = randint(1,10000)
+    statTrackChance = randint(1,100)
     sleep(0.00000005)
-    if skinChance >= 7879:
+    if skinChance <= 7879:
         print("Blue")
+        if statTrackChance <= 8:
+            statTrack += 1
+            print("StatTrack!")
         tries += 1
         blue += 1
-    if skinChance >= 1696 and skinChance < 7879:
+    if skinChance <= 9575 and skinChance > 7879:
         print("Purple")
+        if statTrackChance <= 8:
+            statTrack += 1
+            print("StatTrack!")
         tries += 1
         purple += 1
-    if skinChance >= 282 and skinChance < 1696:
+    if skinChance <= 9857 and skinChance > 9575:
         print("Pink")
+        if statTrackChance <= 8:
+            statTrack += 1
+            print("StatTrack!")
         tries += 1
         pink += 1
-    if skinChance >= 99 and skinChance < 282:
+    if skinChance <= 9956 and skinChance > 9857:
         print("Red")
+        if statTrackChance <= 8:
+            statTrack += 1
+            print("StatTrack!")
         tries += 1
         red += 1
-    if skinChance >= 44 and skinChance < 99:
+    if skinChance <= 10000 and skinChance > 9956:
         totalCost = str(caseCost * tries + tries * 2.5)
-        print("KNIFE")
+        print("Knife")
+        if statTrackChance <= 8:
+            statTrack += 1
+            print("StatTrack!")
         print(" ")
         print("Blue Skins:", blue)
         print("Purple Skins:", purple)
         print("Pink Skins:", pink)
         print("Red Skins:", red)
-        print("Tries:", tries)
+        print("StatTrack Skins:", statTrack)
+        print("Tries:", tries + 1)
         print("Total Cost: $" + totalCost)
-        exit = input()
+        exit = input("Press Enter To Exit: ")
+        if exit == '':
+            quit()
