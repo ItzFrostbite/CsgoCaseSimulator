@@ -65,10 +65,12 @@ while True:
             red += 1
     if skinChance <= 10000 and skinChance > 9956:
         totalCost = str(caseCost * tries + tries * 2.5)
-        print("Knife!")
+        tries += 1
         if statTrackChance <= 8:
             statTrack += 1
-            print("StatTrack!")
+            print("StatTrack Knife!")
+        else:
+            print("Knife!")
         print(" ")
         print("Blue Skins:", blue, "StatTrack:", statTrackBlue)
         print("Purple Skins:", purple, "StatTrack:", statTrackPurple)
